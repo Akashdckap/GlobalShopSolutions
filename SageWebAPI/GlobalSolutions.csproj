@@ -2,15 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
     
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,7 +26,7 @@
 	<Compile Remove="Models\ContactCreate.cs" />
 	<Compile Remove="Models\CustomerCreate.cs" />
 	<Compile Remove="Models\Inventory.cs" />
-	<Compile Remove ="Models\Order.cs" />
+	<Compile Remove="Models\Order.cs" />
 	<Compile Remove="Models\OrderCreate.cs" />
 	<Compile Remove="Models\OrderStatus.cs" />
 	<Compile Remove="Models\Product.cs" />
