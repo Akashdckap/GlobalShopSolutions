@@ -1,0 +1,3 @@
+dotnet sonarscanner begin /k:"GlobalSolutions" /d:sonar.host.url="http://localhost:9000"  /d:sonar.token="sqp_08f753d4729f4a097aeb06ad10da65575fa7347e"
+dotnet build
+dotnet sonarscanner end /d:sonar.token="sqp_08f753d4729f4a097aeb06ad10da65575fa7347e"

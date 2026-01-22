@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\CustomerController.cs" />
+    <Compile Remove="Controllers\OrdersController.cs" />
+    <Compile Remove="Services\CustomerService.cs" />
+    <Compile Remove="Services\ICustomerService.cs" />
+    <Compile Remove="Services\IOrdersService.cs" />
+    <Compile Remove="Services\IProductsService.cs" />
+    <Compile Remove="Services\OrdersService.cs" />
+    <Compile Remove="Services\ProductsService.cs" />
+	<Compile Remove="Models\ContactCreate.cs" />
+	<Compile Remove="Models\CustomerCreate.cs" />
+	<Compile Remove="Models\Inventory.cs" />
+	<Compile Remove ="Models\Order.cs" />
+	<Compile Remove="Models\OrderCreate.cs" />
+	<Compile Remove="Models\OrderStatus.cs" />
+	<Compile Remove="Models\Product.cs" />
+	<Compile Remove="Models\ProductPrice.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
+    <PackageReference Include="IdentityServer4" Version="4.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.0.0" />
+    <PackageReference Include="System.Data.Odbc" Version="5.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.14.1" />
+  </ItemGroup>
+
+
+</Project>
