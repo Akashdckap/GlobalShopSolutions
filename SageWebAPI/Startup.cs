@@ -38,13 +38,17 @@ namespace GlobalSolutions
 
             var odbcconnStr = Configuration["odbcConnection"]; //P21Connection is put up at appsettings.json
 
+            var connString = Configuration.GetConnectionString("odbcConnection");
+
             var odbcEnv = odbcconnStr
                 .Replace("{DB_DSN}", Dsn)
                 .Replace("{DB_UID}", UId)
                 .Replace("{DB_PWD}", pwd)
                 .Replace("PASS=","PWD=");
 
-            services.AddSingleton<IDbConnectionService>(new DbConnectionService(odbcEnv));
+           // services.AddSingleton<IDbConnectionService>(new DbConnectionService(odbcEnv));
+            services.AddSingleton<IDbConnectionService>(new DbConnectionService(connString));
+
             services.AddSingleton<IProductService, ProductService>();
             services.AddControllers();
             var client = new Client()

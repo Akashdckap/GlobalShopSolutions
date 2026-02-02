@@ -23,7 +23,7 @@ namespace GlobalSolutions
                         new Secret("secret".Sha256())
                     },
                     // scopes that client has access to
-                    AllowedScopes = { "sagewebapi" }
+                    AllowedScopes = { "GSSwebapi" }
                 }
             };
        
@@ -43,13 +43,14 @@ namespace GlobalSolutions
         {
             return new List<ApiResource>
             {
-                new ApiResource("sagewebapi", "Sage Web API")
+                new ApiResource("GSSwebapi", "GSS Web API")
             };
         }
-
+        
         public static IEnumerable<ApiScope> Apiscope => new List<ApiScope>
         {
-            new ApiScope("sagewebapi", "Sage Web API")
+            new ApiScope("GSSwebapi", "GSS Web API")
         };
+        
     }
 }
