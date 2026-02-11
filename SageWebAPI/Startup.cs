@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using GlobalSolutions.Services;
 using IdentityServer4.Models;
 using Microsoft.IdentityModel.Tokens;
+using System.Data.Odbc;
 
 namespace GlobalSolutions
 {
@@ -38,16 +39,16 @@ namespace GlobalSolutions
 
             var odbcconnStr = Configuration["odbcConnection"]; //P21Connection is put up at appsettings.json
 
-            var connString = Configuration.GetConnectionString("odbcConnection");
-
+             var connString = Configuration.GetConnectionString("odbcConnection");
+          //  var connString = new OdbcConnection("DSN=GLOBAL_TST;UID=DCKAP;PWD=dckap;");
             var odbcEnv = odbcconnStr
                 .Replace("{DB_DSN}", Dsn)
                 .Replace("{DB_UID}", UId)
                 .Replace("{DB_PWD}", pwd)
                 .Replace("PASS=","PWD=");
 
-           // services.AddSingleton<IDbConnectionService>(new DbConnectionService(odbcEnv));
-            services.AddSingleton<IDbConnectionService>(new DbConnectionService(connString));
+            services.AddSingleton<IDbConnectionService>(new DbConnectionService(odbcEnv));
+            //services.AddSi<IDbConnectionService>(new DbConnectionService(connString));
 
             services.AddSingleton<IProductService, ProductService>();
             services.AddControllers();
