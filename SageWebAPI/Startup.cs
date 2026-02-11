@@ -47,7 +47,7 @@ namespace GlobalSolutions
                 .Replace("{DB_PWD}", pwd)
                 .Replace("PASS=","PWD=");
 
-            services.AddSingleton<IDbConnectionService>(new DbConnectionService(odbcEnv));
+            services.AddSingleton<IDbConnectionService>(new DbConnectionService(connString));
             //services.AddSi<IDbConnectionService>(new DbConnectionService(connString));
 
             services.AddSingleton<IProductService, ProductService>();
